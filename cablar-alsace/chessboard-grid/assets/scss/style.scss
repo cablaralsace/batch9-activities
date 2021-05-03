@@ -1,0 +1,43 @@
+.header {
+  width:20%;    
+  height: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20px;
+}
+
+
+.chessboard {
+    display: grid;
+    grid-template-rows: repeat(8, [row] 6.25vw);
+    grid-template-columns: repeat(8, [col] 6.25vw);
+    grid-gap: 0;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+.chessboard > div {
+    background-color: seagreen;
+}
+
+.chessboard div:nth-child(-n+8):nth-child(even), 
+.chessboard div:nth-child(n+8) ~ div:nth-child(-n+16):nth-child(odd), 
+.chessboard div:nth-child(n+16) ~ div:nth-child(-n+24):nth-child(even), 
+.chessboard div:nth-child(n+24) ~ div:nth-child(-n+32):nth-child(odd), 
+.chessboard div:nth-child(n+32) ~ div:nth-child(-n+40):nth-child(even), 
+.chessboard div:nth-child(n+40) ~ div:nth-child(-n+48):nth-child(odd), 
+.chessboard div:nth-child(n+48) ~ div:nth-child(-n+56):nth-child(even), 
+.chessboard div:nth-child(n+56) ~ div:nth-child(-n+64):nth-child(odd),
+{
+    background-color: whitesmoke;
+}
+
+img {
+    width: 80%;    
+    height: 80%;
+    margin-left: 10%;
+    margin-top:10%;
+  }
+    

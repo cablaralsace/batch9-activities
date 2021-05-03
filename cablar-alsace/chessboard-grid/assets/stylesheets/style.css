@@ -1,77 +1,33 @@
 .header {
   width: 20%;
   height: 20%;
-  margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 .chessboard {
   display: grid;
-  grid-template-columns: 8% 8% 8% 8% 8% 8% 8% 8%;
-  grid-template-rows: repeat(8, 8vw);
+  grid-template-rows: repeat(8, [row] 6.25vw);
+  grid-template-columns: repeat(8, [col] 6.25vw);
+  grid-gap: 0;
   justify-content: center;
-  margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .chessboard > div {
-  background-color: forestgreen;
+  background-color: seagreen;
 }
 
-.chessboard > div:nth-child(2),
-.chessboard > div:nth-child(4),
-.chessboard > div:nth-child(6),
-.chessboard > div:nth-child(8) {
-  background-color: whitesmoke;
-}
-
-.chessboard > div:nth-child(9),
-.chessboard > div:nth-child(11),
-.chessboard > div:nth-child(13),
-.chessboard > div:nth-child(15) {
-  background-color: whitesmoke;
-}
-
-.chessboard > div:nth-child(18),
-.chessboard > div:nth-child(20),
-.chessboard > div:nth-child(22),
-.chessboard > div:nth-child(24) {
-  background-color: whitesmoke;
-}
-
-.chessboard > div:nth-child(25),
-.chessboard > div:nth-child(27),
-.chessboard > div:nth-child(29),
-.chessboard > div:nth-child(31) {
-  background-color: whitesmoke;
-}
-
-.chessboard > div:nth-child(34),
-.chessboard > div:nth-child(36),
-.chessboard > div:nth-child(38),
-.chessboard > div:nth-child(40) {
-  background-color: whitesmoke;
-}
-
-.chessboard > div:nth-child(41),
-.chessboard > div:nth-child(43),
-.chessboard > div:nth-child(45),
-.chessboard > div:nth-child(47) {
-  background-color: whitesmoke;
-}
-
-.chessboard > div:nth-child(50),
-.chessboard > div:nth-child(52),
-.chessboard > div:nth-child(54),
-.chessboard > div:nth-child(56) {
-  background-color: whitesmoke;
-}
-
-.chessboard > div:nth-child(57),
-.chessboard > div:nth-child(59),
-.chessboard > div:nth-child(61),
-.chessboard > div:nth-child(63) {
+.chessboard div:nth-child(-n+8):nth-child(even),
+.chessboard div:nth-child(n+8) ~ div:nth-child(-n+16):nth-child(odd),
+.chessboard div:nth-child(n+16) ~ div:nth-child(-n+24):nth-child(even),
+.chessboard div:nth-child(n+24) ~ div:nth-child(-n+32):nth-child(odd),
+.chessboard div:nth-child(n+32) ~ div:nth-child(-n+40):nth-child(even),
+.chessboard div:nth-child(n+40) ~ div:nth-child(-n+48):nth-child(odd),
+.chessboard div:nth-child(n+48) ~ div:nth-child(-n+56):nth-child(even),
+.chessboard div:nth-child(n+56) ~ div:nth-child(-n+64):nth-child(odd) {
   background-color: whitesmoke;
 }
 
