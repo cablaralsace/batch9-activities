@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@media only screen and (max-width: 1024px) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background-color: black;
+  }
+
+  .nav-bar {
+    clear: both;
+    overflow: auto;
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .logo img {
+    float: left;
+  }
+
+  .nav-link {
+    float: right;
+    margin-top: 1%;
+  }
+
+  .nav-link li {
+    display: inline-block;
+  }
+
+  .nav-link img {
+    height: 8vw;
+  }
+
+  .media {
+    padding-top: 5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .results-media {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10%;
+  }
+
+  #results-header {
+    margin-top: 30%;
+    width: 100vw;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: black;
+}
+
+/*------------------NAVIGATION------------------*/
+.nav-bar {
+  clear: both;
+  overflow: auto;
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.logo img {
+  float: left;
+  margin: 2%;
+}
+
+.nav-link {
+  float: right;
+  margin-top: 1%;
+  padding-right: 2%;
+}
+
+.nav-link li {
+  display: inline-block;
+}
+
+/*------------------HEADER--------*/
+#header-img {
+  width: 100%;
+  background-color: black;
+  background-attachment: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 1%;
+  margin-bottom: 0;
+}
+
+/*----------------------------STARK-VIDEO----------------------------*/
+.stark {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 3%;
+  margin-bottom: 3%;
+}
+
+#stark-header {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30vw;
+}
+
+.stark iframe {
+  padding-top: 2%;
+  padding-bottom: 5%;
+  width: 50vw;
+  height: 30vw;
+}
+
+/*----------------------------STARK-BACKGROUND----------------------------*/
+.stark-background img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25vw;
+}
+
+.stark-background p {
+  text-align: justify;
+  font-family: Roboto;
+  color: whitesmoke;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+/*---------------------------------------------------------------members---------------------------------------------------------------*/
+/*----------------------------STARKS OF WINTERFELL----------------------------*/
+#stark-winterfell {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50vw;
+  padding-top: 3%;
+}
+
+/*----------------------------STARKS-1----------------------------*/
+.stark-winterfell-1 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(2, 10vw);
+  grid-gap: 3%;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: Roboto;
+  color: whitesmoke;
+  padding-bottom: 3%;
+}
+
+.stark-winterfell-1 img {
+  width: 80%;
+}
+
+/*----------------------------STARKS-2----------------------------*/
+.stark-winterfell-2 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(6, 10vw);
+  grid-gap: 3%;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: Roboto;
+  color: whitesmoke;
+  padding-bottom: 5%;
+}
+
+.stark-winterfell-2 img {
+  width: 80%;
+}
+
+/*-----------------------------------HOUSES-------------------------------------*/
+.members-houses {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#vassal-houses {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30vw;
+  padding-top: 2%;
+}
+
+/*----------------------------MEMBERS-1----------------------------*/
+.members-houses-1 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(6, 10vw);
+  grid-gap: 3%;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: Roboto;
+  color: whitesmoke;
+  padding-bottom: 3%;
+}
+
+.members-houses-1 img {
+  width: 80%;
+}
+
+/*----------------------------MEMBERS-2----------------------------*/
+.members-houses-2 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(5, 10vw);
+  grid-gap: 3%;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: Roboto;
+  color: whitesmoke;
+}
+
+.members-houses-2 img {
+  width: 80%;
+}
+
+/*----------------------------SWEAR FORM----------------------------*/
+#swear img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50vw;
+  padding-top: 8%;
+}
+
+#swear p {
+  display: block;
+  margin-left: 20%;
+  margin-right: 20%;
+  font-family: Roboto;
+  text-align: center;
+  color: whitesmoke;
+  padding-bottom: 3%;
+}
+
+.swear-form {
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10%;
+}
+
+#email-label {
+  color: whitesmoke;
+  font-family: Roboto;
+  text-align: center;
+}
+
+#email {
+  width: 30%;
+  font-family: Roboto;
+  text-align: center;
+  margin: 1%;
+}
+
+#submit {
+  background-color: white;
+  width: 100%;
+  color: black;
+  border-radius: 5px;
+  margin: 1%;
+}
+
+#submit:hover {
+  background-color: black;
+  color: white;
+  transition: 0.3s;
+}
+
+footer {
+  text-align: center;
+  background-color: black;
+  font-family: Roboto;
+  color: black;
+}
+
+/*-------------------------RESULTS---------------------*/
+.results-media {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#results-header {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90vw;
+}
+
+/*# sourceMappingURL=style.css.map */
