@@ -1,0 +1,691 @@
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
+body {
+  background-image: url("../images/bg3.jpg");
+  display: grid;
+  grid-template-columns: 25% 12.5% 12.5% 12.5% 12.5% 25%;
+  grid-template-rows: 10% 10% 7.5% 7.5% 7.5% 7.5% 7.5% 7.5% 7.5% 7.5% 10% 10%;
+  width: 100vw;
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  overflow: hidden;
+}
+
+#clock {
+  grid-column-start: 3;
+  grid-column-end: 7;
+  grid-row-start: 1;
+  grid-row-end: 5;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 0.3s;
+  transition-property: border, box-shadow;
+  font-family: "Segoe UI", sans-serif;
+  color: whitesmoke;
+}
+
+#clock h1 {
+  position: relative;
+  font-size: 3.8em;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+#clock h2 {
+  position: relative;
+  margin-top: -15%;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.nameContainer {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 5;
+  width: 80%;
+  margin-top: 1%;
+  margin-bottom: 3%;
+  margin-left: 15%;
+  margin-right: auto;
+  padding: 1%;
+  background-color: lightsalmon;
+  border: 3px solid lightgoldenrodyellow;
+  border-radius: 20px;
+  box-shadow: 3px 3px 10px lightsalmon;
+  text-align: center;
+}
+
+#nameGreet {
+  text-align: center;
+  margin-top: 1%;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 2em;
+  color: whitesmoke;
+}
+
+#nameGreet2 {
+  margin-top: 10%;
+  margin-bottom: auto;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 1.3em;
+  color: whitesmoke;
+  visibility: show;
+}
+
+.nameContainer input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid wheat;
+  padding: 1%;
+  width: 15vw;
+  text-align: center;
+  color: whitesmoke;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+}
+.nameContainer input:focus {
+  outline: none;
+}
+
+.nameContainer button {
+  background-color: wheat;
+  border: 2px solid lightsalmon;
+  border-radius: 10px;
+  box-shadow: 2px 1px 5px lightcoral;
+  margin-left: 2%;
+  margin-right: auto;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  padding-left: 2%;
+  padding-right: 2%;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 1em;
+  color: lightcoral;
+}
+
+.focusContainer {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 5;
+  grid-row-end: 7;
+  width: 80%;
+  height: 100%;
+  margin-top: 4%;
+  margin-left: 15%;
+  margin-right: auto;
+  padding: 1%;
+  background-color: lightcoral;
+  border: 3px solid lightgoldenrodyellow;
+  border-radius: 20px;
+  box-shadow: 3px 3px 10px lightcoral;
+  font-family: "Segoe UI", sans-serif;
+  text-align: center;
+}
+
+#focusHeader1 {
+  margin-top: 5%;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 1em;
+  color: whitesmoke;
+  visibility: show;
+}
+
+#focusHeader2 {
+  margin-top: -3%;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 0.8em;
+  font-style: italic;
+  color: wheat;
+  visibility: show;
+}
+
+#focusDisplayMain {
+  margin-top: -2%;
+  text-align: center;
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 1.2em;
+  visibility: show;
+}
+
+.focusContainer input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid lightgoldenrodyellow;
+  padding: 1%;
+  width: 40%;
+  margin-top: 1%;
+  text-align: center;
+  color: whitesmoke;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+}
+.focusContainer input:focus {
+  outline: none;
+}
+
+.focusContainer button {
+  background-color: lightgoldenrodyellow;
+  border: 2px solid lightcoral;
+  box-shadow: 2px 1px 5px lightsalmon;
+  border-radius: 8px;
+  margin-left: 5%;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 1em;
+  color: lightcoral;
+}
+
+.quoteBankDisplay {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 8;
+  grid-row-end: 10;
+  width: 80%;
+  height: 180%;
+  margin-top: 5%;
+  margin-left: 15%;
+  margin-right: auto;
+  padding: 1%;
+  background-color: lightseagreen;
+  border: 3px solid lightgreen;
+  border-radius: 20px;
+  box-shadow: 1px 2px 5px lightseagreen;
+  font-family: "Segoe UI", sans-serif;
+  text-align: center;
+}
+
+.quoteBankDisplay h3 {
+  margin-top: 6%;
+  text-align: center;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1em;
+  visibility: visible;
+  color: whitesmoke;
+}
+
+.quoteBankDisplay button {
+  margin-top: 5%;
+  background-color: lightgreen;
+  border: 2px solid lightseagreen;
+  border-radius: 8px;
+  box-shadow: 1px 1px 5px lightgreen;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 0.8em;
+  color: darkgreen;
+}
+
+.quoteBankAdd {
+  text-align: center;
+}
+
+.quoteBankAdd input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid lightgreen;
+  padding: 2%;
+  width: 18vw;
+  text-align: center;
+  color: whitesmoke;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+}
+.quoteBankAdd input:focus {
+  outline: none;
+}
+
+.quoteBankAdd button {
+  margin-left: 4%;
+  margin-right: auto;
+  background-color: lightgreen;
+  border: 2px solid lightseagreen;
+  border-radius: 8px;
+  box-shadow: 1px 1px 5px lightgreen;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 0.8em;
+  color: darkgreen;
+}
+
+.toDoContainer {
+  grid-column-start: 3;
+  grid-column-end: 7;
+  grid-row-start: 5;
+  grid-row-end: 11;
+  width: 80%;
+  height: 108%;
+  margin-top: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1%;
+  background-color: #5DCAD1;
+  border: 3px solid #B6E5D8;
+  border-radius: 20px;
+  box-shadow: 1px 2px 3px #5DCAD1;
+  font-family: "Segoe UI", sans-serif;
+  text-align: center;
+}
+
+.toDoContainer h1 {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 400;
+  font-size: 1.5em;
+  color: whitesmoke;
+}
+
+.toDoElements {
+  margin-top: 3%;
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: center;
+}
+
+.toDoElements input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid #B6E5D8;
+  padding: 1%;
+  width: 25vw;
+  text-align: center;
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+}
+.toDoElements input:focus {
+  outline: none;
+}
+
+.toDoElements button {
+  background-color: #5DCAD1;
+  border: 2px solid #B6E5D8;
+  box-shadow: 2px 1px 5px #B6E5D8;
+  border-radius: 8px;
+  margin-left: 2%;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  color: whitesmoke;
+}
+
+.toDoList {
+  margin-top: 4%;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 55%;
+  overflow-y: scroll;
+  text-align: left;
+}
+
+.toDoList::-webkit-scrollbar {
+  display: none;
+}
+
+.toDoList li {
+  background-color: deepskyblue;
+  border-radius: 5px;
+  width: 95%;
+  margin: 1%;
+  padding: 1%;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  color: whitesmoke;
+  list-style-type: decimal;
+  transition: 0.5s;
+}
+
+.checked {
+  text-decoration: line-through;
+}
+
+.backgroundStuff {
+  grid-column-start: 6;
+  grid-column-end: 7;
+  grid-row-start: 12;
+  grid-row-end: 13;
+}
+
+.backgroundStuff button {
+  margin-top: 3%;
+  margin-left: 50%;
+  border-radius: 15px;
+  padding: 1% 3%;
+}
+
+#backgroundBtn {
+  background-color: transparent;
+  border: 2px solid transparent;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 0.7em;
+  color: black;
+}
+
+.show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+.hide {
+  visibility: hidden;
+  height: 0;
+  -webkit-animation: fadeIn 1.3s;
+  animation: fadeIn 1.3s;
+}
+
+.none {
+  display: none;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+::placeholder {
+  color: whitesmoke;
+}
+
+@media all and (max-width: 667px) {
+  body {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    width: 100vw;
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  #clock {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.5em;
+  }
+
+  .nameContainer {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 5;
+    width: 70%;
+    height: 50%;
+    margin: 0 auto;
+    font-size: 0.8em;
+  }
+
+  #nameGreet {
+    margin-top: 1%;
+    font-weight: 600;
+    font-size: 1.1em;
+  }
+
+  #nameGreet2 {
+    margin-top: 5%;
+    margin-bottom: auto;
+    font-weight: 600;
+    font-size: 1.2em;
+  }
+
+  .nameContainer input {
+    width: 50vw;
+    font-weight: 300;
+    font-size: 1em;
+  }
+  .nameContainer input:focus {
+    outline: none;
+  }
+
+  .nameContainer button {
+    margin-left: 2%;
+    margin-right: auto;
+    font-weight: 600;
+    font-size: 0.8em;
+  }
+
+  .focusContainer {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 6;
+    width: 70%;
+    height: 50%;
+    margin-top: 7%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #focusHeader1 {
+    margin-top: 1%;
+    font-weight: 600;
+    font-size: 1em;
+  }
+
+  #focusHeader2 {
+    margin-top: -3%;
+    text-align: center;
+    font-family: "Segoe UI", sans-serif;
+    font-weight: 600;
+    font-size: 0.8em;
+  }
+
+  #focusDisplayMain {
+    font-weight: 600;
+    font-size: 1em;
+  }
+
+  .focusContainer input {
+    width: 60%;
+    margin-top: 1%;
+    font-weight: 300;
+    font-size: 0.7em;
+  }
+
+  .focusContainer button {
+    margin-left: 2%;
+    font-weight: 600;
+    font-size: 0.6em;
+  }
+
+  .quoteBankDisplay {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 6;
+    grid-row-end: 8;
+    width: 70%;
+    height: 70%;
+    margin-top: -5%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .quoteBankDisplay h3 {
+    margin-top: 2%;
+    font-weight: 600;
+    font-size: 0.7em;
+  }
+
+  .quoteBankDisplay button {
+    font-weight: 600;
+    font-size: 0.3em;
+  }
+
+  .quoteBankAdd {
+    margin-top: -3%;
+  }
+
+  .quoteBankAdd input {
+    width: 40vw;
+    font-weight: 300;
+    font-size: 0.7em;
+  }
+
+  .quoteBankAdd button {
+    margin-left: 4%;
+    margin-right: auto;
+    font-size: 0.2em;
+  }
+
+  .toDoContainer {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 8;
+    grid-row-end: 10;
+    width: 70%;
+    height: 130%;
+    margin-top: -9.5%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .toDoContainer h1 {
+    font-weight: 600;
+    font-size: 0.8em;
+  }
+
+  .toDoElements {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .toDoElements input {
+    width: 30vw;
+    font-weight: 300;
+    font-size: 0.8em;
+  }
+
+  .toDoElements button {
+    margin-left: 2%;
+    font-weight: 400;
+    font-size: 0.7em;
+  }
+
+  .toDoList {
+    margin-top: -2%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 65%;
+    overflow-y: scroll;
+    text-align: left;
+  }
+
+  .toDoList::-webkit-scrollbar {
+    display: none;
+  }
+
+  .toDoList li {
+    width: 80%;
+    padding: 1%;
+    font-size: 0.6em;
+  }
+
+  .backgroundStuff {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 10;
+    grid-row-end: 11;
+  }
+
+  .backgroundStuff button {
+    margin-top: 15%;
+    margin-left: 33.3%;
+    margin-right: auto;
+    border-radius: 15px;
+    padding: 1% 3%;
+  }
+
+  #backgroundBtn {
+    background-color: transparent;
+    border: 2px solid transparent;
+    text-align: center;
+    font-family: "Segoe UI", sans-serif;
+    font-weight: 600;
+    font-size: 0.7em;
+    color: black;
+  }
+
+  .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+
+  .hide {
+    visibility: hidden;
+    height: 0;
+    -webkit-animation: fadeIn 1.3s;
+    animation: fadeIn 1.3s;
+  }
+
+  .none {
+    display: none;
+  }
+
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  ::placeholder {
+    color: whitesmoke;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
