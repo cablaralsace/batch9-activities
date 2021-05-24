@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momentum App</title>
+</head>
+
+<!-- Style and JS -->
+<link rel="stylesheet" href="assets\stylesheets\style.css">
+<script src="app.js" defer></script>
+
+<body>
+    
+<!-- CLOCK -->
+    <div id="clock">
+        <h1>Time</h1>
+        <h2>Date</h2>
+    </div>
+
+
+
+<!-- NAME -->
+    <div class="nameContainer">
+
+        <div class="nameGreet1">
+            <h1 id="nameGreet">Welcome!</h1>
+            <h1 id="nameGreet2"></h1>
+            
+        
+            <input
+            id="nameInput"
+            type="text"
+            placeholder="Please Enter Your Name">
+    
+            <button id="nameBtn">
+                Go
+            </button>
+
+        </div>
+    </div>  
+    
+
+<!--Focus-->
+    <div class="focusContainer">
+        <div class="focusGreet">
+            <h1 id="focusHeader1">What's your main focus today?</h1>
+            <h1 id="focusHeader2"></h1>
+            <p id="focusDisplayMain"></p>
+            
+
+            <input
+            id="focusInput"
+            type="text"
+            placeholder="Type your main focus here">
+
+            <button id="focusBtn">
+                Enter
+            </button>
+
+        </div>
+    </div>
+
+<!--QUOTES-->
+<div class="quoteBankDisplay">
+    <h3 id="quoteDisplay">"There is no excuse for not trying"</h3> 
+
+    <div class="quoteBankAdd">
+        <input
+        id="quoteInput"
+        type="text"
+        placeholder="Add Your Quote Here">
+                
+        <button id="quoteBtnAdd" onclick="quoteAdd"> Add Quote </button>
+    </div> 
+
+    <button id="quoteBtnNext"> Next Quote </button>
+    
+</div>
+
+<!--TO DO-->
+    <div class="toDoContainer">
+        <h1 id="toDoTitle">Your To-Do List</h1>
+
+        <div class="toDoElements">
+            <input
+            id="toDoInput"
+            type="text"
+            placeholder="Add an Item">
+
+            <button id="toDoBtn">Add</button>
+        </div>
+
+        <div class="toDoList">
+            <ul id="toDoItems"> </ul>
+        </div>
+    </div>
+
+<div class="backgroundStuff">
+    <button id="backgroundBtn">🤍💛🧡</button>
+</div>
+
+</body>
+</html>
