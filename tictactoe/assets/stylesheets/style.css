@@ -16,15 +16,10 @@ body {
 .board {
   width: 100vw;
   height: 100vh;
-
   display: grid;
   grid-template-columns: repeat(3, auto);
-
-  //align the grid to center
   justify-content: center;
   align-content: center;
-
-  // align items inside the grid to center
   justify-items: center;
   align-items: center;
 }
@@ -33,47 +28,38 @@ body {
   width: var(--cell-size);
   height: var(--cell-size);
   border: 1px solid black;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   position: relative;
-
   cursor: pointer;
 }
 
-//cell 1, 2, 3
 .cell:first-child,
 .cell:nth-child(2),
 .cell:nth-child(3) {
   border-top: none;
 }
 
-//cell 1, 4, 7
-.cell:nth-child(3n + 1) {
+.cell:nth-child(3n+1) {
   border-left: none;
 }
 
-//cell 3, 6, 9
-.cell:nth-child(3n + 3) {
+.cell:nth-child(3n+3) {
   border-right: none;
 }
 
-//cell 7, 8, 9
 .cell:nth-child(7),
 .cell:nth-child(8),
 .cell:last-child {
   border-bottom: none;
 }
 
-//not allowed if meron nang X or O na nakalagay
 .cell.x,
 .cell.circle {
   cursor: not-allowed;
 }
 
-//styling X, hovering shows X
 .cell.x::before,
 .cell.x::after {
   background-color: lightseagreen;
@@ -104,7 +90,6 @@ body {
   transform: rotate(-45deg);
 }
 
-//styling circle
 .cell.circle::before,
 .cell.circle::after {
   content: "";
@@ -115,7 +100,6 @@ body {
 .cell.circle::before {
   width: var(--mark-size);
   height: var(--mark-size);
-
   background-color: lightsalmon;
 }
 
@@ -124,3 +108,5 @@ body {
   height: calc(var(--mark-size) * 0.7);
   background-color: white;
 }
+
+/*# sourceMappingURL=style.css.map */
