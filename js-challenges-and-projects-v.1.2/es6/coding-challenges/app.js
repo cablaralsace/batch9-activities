@@ -3,11 +3,10 @@
 //     name: "James Bond",
 //     codeName: "007",
 //     age: 32,
-//     address: {city: 'London'}  
+//     address: {city: 'London'}
 // }
 
 // console.log (`${player.name} is Agent ${player.codeName} and is ${player.age} years old.`);
-
 
 //Challenge 2 OBJECT LITERALS
 // function addressMaker (city, street, country) {
@@ -29,7 +28,6 @@
 //     console.log(`${student.name} : ${student.city}`);
 // }
 
-
 //Challenge 4 Default Parameters
 
 // const buySomething = (food = 'something') => {
@@ -44,32 +42,33 @@
 // buySomething ('chicharon');
 // buySomething ();
 
-//Classes
-class Player {
-    constructor(name,country) {
-    this.name= name;
-    this.country= country;
-}
+//Challenge - Classes
+// class Player {
+//   constructor(name, country) {
+//     this.name = name;
+//     this.country = country;
+//   }
 
-    displayInformation() {
-        console.log(`${this.name} was born in ${this.country}`);
-    }
-}
+//   displayInformation() {
+//     console.log(`${this.name} was born in ${this.country}`);
+//   }
+// }
 
-let newMessi = new Player('Messi','Argentina');
-newMessi.displayInformation();
+// let newMessi = new Player("Messi", "Argentina");
+// newMessi.displayInformation();
 
-class BasketballPlayer extends Player {
-    constructor(name,age) {
-        super(name);
-        this.age = age;
-    }
+// class BasketballPlayer extends Player {
+//   constructor(name, age) {
+//     super(name);
+//     this.age = age;
+//   }
 
-    displayInformation() {
-        console.log(`${this.name} is ${this.age} years old and knows how to play basketball.`);
-    }
-    
-}
+//   displayInformation() {
+//     console.log(
+//       `${this.name} is ${this.age} years old and knows how to play basketball.`
+//     );
+//   }
+// }
 
-let lebron = new BasketballPlayer('Lebron', 34);
-lebron.displayInformation();
+// let lebron = new BasketballPlayer("Lebron", 34);
+// lebron.displayInformation();
