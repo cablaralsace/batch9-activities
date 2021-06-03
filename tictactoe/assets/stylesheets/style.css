@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
 *,
 *::after,
 *::before {
@@ -13,17 +14,40 @@
 body {
   margin: 0;
   overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 25% 25% 25% 25%;
+}
+
+h1 {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  margin-top: 80px;
+  text-align: center;
+  font-family: "Fredoka One", cursive;
+  font-size: 4em;
+  letter-spacing: 3px;
+  color: lightpink;
 }
 
 .board {
-  width: 100vw;
-  height: 100vh;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  width: 50vw;
+  height: 50vh;
   display: grid;
   grid-template-columns: repeat(3, auto);
   justify-content: center;
   align-content: center;
   justify-items: center;
   align-items: center;
+  margin-top: -3%;
 }
 
 .cell {
@@ -58,24 +82,24 @@ body {
 }
 
 .cell.x,
-.cell.circle {
+.cell.o {
   cursor: not-allowed;
 }
 
 .cell.x::before,
 .cell.x::after {
-  background-color: lightseagreen;
+  background-color: wheat;
 }
 
-.board.x .cell:not(.x):not(.circle):hover::before,
-.board.x .cell:not(.x):not(.circle):hover::after {
+.board.x .cell:not(.x):not(.o):hover::before,
+.board.x .cell:not(.x):not(.o):hover::after {
   background-color: lightgrey;
 }
 
 .cell.x::before,
 .cell.x::after,
-.board.x .cell:not(.x):not(.circle):hover::before,
-.board.x .cell:not(.x):not(.circle):hover::after {
+.board.x .cell:not(.x):not(.o):hover::before,
+.board.x .cell:not(.x):not(.o):hover::after {
   content: "";
   width: calc(var(--mark-size) * 0.16);
   height: var(--mark-size);
@@ -83,80 +107,139 @@ body {
 }
 
 .cell.x::before,
-.board.x .cell:not(.x):not(.circle):hover::before {
+.board.x .cell:not(.x):not(.o):hover::before {
   transform: rotate(45deg);
 }
 
 .cell.x::after,
-.board.x .cell:not(.x):not(.circle):hover::after {
+.board.x .cell:not(.x):not(.o):hover::after {
   transform: rotate(-45deg);
 }
 
-.cell.circle::before,
-.cell.circle::after {
-  background-color: lightsalmon;
+.cell.o::before,
+.cell.o::after {
+  background-color: lightskyblue;
 }
 
-.board.circle .cell:not(.circle):not(.x):hover::before,
-.board.circle .cell:not(.circle):not(.x):hover::after {
+.board.o .cell:not(.o):not(.x):hover::before,
+.board.o .cell:not(.o):not(.x):hover::after {
   background-color: lightgrey;
 }
 
-.cell.circle::before,
-.cell.circle::after,
-.board.circle .cell:not(.circle):not(.x):hover::before,
-.board.circle .cell:not(.circle):not(.x):hover::after {
+.cell.o::before,
+.cell.o::after,
+.board.o .cell:not(.o):not(.x):hover::before,
+.board.o .cell:not(.o):not(.x):hover::after {
   content: "";
   position: absolute;
   border-radius: 50%;
 }
 
-.cell.circle::before,
-.board.circle .cell:not(.circle):not(.x):hover::before {
+.cell.o::before,
+.board.o .cell:not(.o):not(.x):hover::before {
   width: var(--mark-size);
   height: var(--mark-size);
 }
 
-.cell.circle::after,
-.board.circle .cell:not(.circle):not(.x):hover::after {
+.cell.o::after,
+.board.o .cell:not(.o):not(.x):hover::after {
   width: calc(var(--mark-size) * 0.7);
   height: calc(var(--mark-size) * 0.7);
   background-color: white;
 }
 
 .winning-message {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.9);
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 4;
+  grid-row-end: 5;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  color: white;
-  font-size: 5rem;
-  font-family: "Roboto", sans-serif;
+  margin-top: -7%;
+  color: lightpink;
+  font-size: 2.5rem;
+  font-family: "Fredoka One", cursive;
 }
 
-.winning-message button {
+.gameButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1%;
+}
+
+.gameButtons button {
   background-color: white;
   border: none;
-  border-radius: 10px;
-  padding: 1%;
+  border-radius: 4px;
+  padding: 3%;
   cursor: pointer;
-  font-size: 3rem;
+  font-size: 1rem;
   font-family: "Roboto", sans-serif;
 }
 
-.winning-message button:hover {
-  background-color: goldenrod;
+.gameButtons button:hover {
+  background-color: lightpink;
   color: white;
 }
 
 .winning-message.show {
   display: flex;
+  flex-direction: column;
+}
+
+.winning-message.color {
+  color: lightgreen;
+}
+
+@media all and (max-width: 667px) {
+  body {
+    margin: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+  }
+
+  h1 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    margin-top: 80px;
+    text-align: center;
+    font-family: "Fredoka One", cursive;
+    font-size: 2.5em;
+    letter-spacing: 3px;
+    color: lightpink;
+  }
+
+  .winning-message {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    justify-content: center;
+    align-items: center;
+    margin-top: -10%;
+    color: lightpink;
+    font-size: 2rem;
+    font-family: "Fredoka One", cursive;
+  }
+
+  .winning-message.show {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

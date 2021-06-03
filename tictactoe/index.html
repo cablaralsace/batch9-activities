@@ -12,22 +12,30 @@
   <script src="app.js" defer></script>
 
   <body>
+
+    <h1>TIC TAC TOE</h1>
     <div class="board" id="board">
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
+      <div data-cell-index="0" flag=true class="cell" data-cell></div>
+      <div data-cell-index="1" flag=true class="cell" data-cell></div>
+      <div data-cell-index="2" flag=true class="cell" data-cell></div>
+      <div data-cell-index="3" flag=true class="cell" data-cell></div>
+      <div data-cell-index="4" flag=true class="cell" data-cell></div>
+      <div data-cell-index="5" flag=true class="cell" data-cell></div>
+      <div data-cell-index="6" flag=true class="cell" data-cell></div>
+      <div data-cell-index="7" flag=true class="cell" data-cell></div>
+      <div data-cell-index="8" flag=true class="cell" data-cell></div>
     </div>
 
     <!--Restart-->
     <div class="winning-message" id="winningMessage">
       <div data-winning-message-text></div>
-      <button id="restartButton">Restart</button>
+      
+      <div class="gameButtons">
+        <button id="previousButton">⏪</button>
+        <button id="restartButton">Restart</button>
+        <button id="nextButton">⏩</button>
+      </div>
+    
     </div>
   </body>
 </html>
