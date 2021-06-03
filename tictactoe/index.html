@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe</title>
+  </head>
+
+  <!-- Style and JS -->
+  <link rel="stylesheet" href="assets\stylesheets\style.css" />
+  <script src="app.js" defer></script>
+
+  <body>
+
+    <h1>TIC TAC TOE</h1>
+    <div class="board" id="board">
+      <div data-cell-index="0" flag=true class="cell" data-cell></div>
+      <div data-cell-index="1" flag=true class="cell" data-cell></div>
+      <div data-cell-index="2" flag=true class="cell" data-cell></div>
+      <div data-cell-index="3" flag=true class="cell" data-cell></div>
+      <div data-cell-index="4" flag=true class="cell" data-cell></div>
+      <div data-cell-index="5" flag=true class="cell" data-cell></div>
+      <div data-cell-index="6" flag=true class="cell" data-cell></div>
+      <div data-cell-index="7" flag=true class="cell" data-cell></div>
+      <div data-cell-index="8" flag=true class="cell" data-cell></div>
+    </div>
+
+    <!--Restart-->
+    <div class="winning-message" id="winningMessage">
+      <div data-winning-message-text></div>
+      
+      <div class="gameButtons">
+        <button id="previousButton">⏪</button>
+        <button id="restartButton">Restart</button>
+        <button id="nextButton">⏩</button>
+      </div>
+    
+    </div>
+  </body>
+</html>

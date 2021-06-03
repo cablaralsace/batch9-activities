@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+$font-win: "Roboto", sans-serif;
+$font-fun: 'Fredoka One', cursive;
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --cell-size: 100px;
+  --mark-size: calc(var(--cell-size) * 0.9);
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 25% 25% 25% 25%;
+}
+
+h1 {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 2;
+
+  margin-top: 80px;
+  text-align: center;
+  font-family: $font-fun;
+  font-size: 4em;
+  letter-spacing: 3px;
+  color: lightpink;
+}
+
+.board {
+  
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 4;
+
+  width: 50vw;
+  height: 50vh;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+
+  //align the grid to center
+  justify-content: center;
+  align-content: center;
+
+  // align items inside the grid to center
+  justify-items: center;
+  align-items: center;
+
+  margin-top: -3%;
+}
+
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  border: 1px solid black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  cursor: pointer;
+}
+
+//cell 1, 2, 3
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+  border-top: none;
+}
+
+//cell 1, 4, 7
+.cell:nth-child(3n + 1) {
+  border-left: none;
+}
+
+//cell 3, 6, 9
+.cell:nth-child(3n + 3) {
+  border-right: none;
+}
+
+//cell 7, 8, 9
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:last-child {
+  border-bottom: none;
+}
+
+//not allowed if meron nang X or O na nakalagay
+.cell.x,
+.cell.o {
+  cursor: not-allowed;
+}
+
+//styling X, hovering shows X
+.cell.x::before,
+.cell.x::after {
+  background-color: wheat;
+}
+
+.board.x .cell:not(.x):not(.o):hover::before,
+.board.x .cell:not(.x):not(.o):hover::after {
+  background-color: lightgrey;
+}
+
+.cell.x::before,
+.cell.x::after,
+.board.x .cell:not(.x):not(.o):hover::before,
+.board.x .cell:not(.x):not(.o):hover::after {
+  content: "";
+  width: calc(var(--mark-size) * 0.16);
+  height: var(--mark-size);
+  position: absolute;
+}
+
+.cell.x::before,
+.board.x .cell:not(.x):not(.o):hover::before {
+  transform: rotate(45deg);
+}
+
+.cell.x::after,
+.board.x .cell:not(.x):not(.o):hover::after {
+  transform: rotate(-45deg);
+}
+
+//styling O, hovering shows O
+.cell.o::before,
+.cell.o::after {
+  background-color: lightskyblue;
+}
+
+.board.o .cell:not(.o):not(.x):hover::before,
+.board.o .cell:not(.o):not(.x):hover::after {
+  background-color: lightgrey;
+}
+.cell.o::before,
+.cell.o::after,
+.board.o .cell:not(.o):not(.x):hover::before,
+.board.o .cell:not(.o):not(.x):hover::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.cell.o::before,
+.board.o .cell:not(.o):not(.x):hover::before {
+  width: var(--mark-size);
+  height: var(--mark-size);
+}
+
+.cell.o::after,
+.board.o .cell:not(.o):not(.x):hover::after {
+  width: calc(var(--mark-size) * 0.7);
+  height: calc(var(--mark-size) * 0.7);
+  background-color: white;
+}
+
+// Winning Message and Button
+.winning-message {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: -7%;
+  color: lightpink;
+  font-size: 2.5rem;
+  font-family: $font-fun;
+}
+
+.gameButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 1%;
+  // flex-direction: column;
+}
+.gameButtons button {
+  background-color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 3%;
+
+  cursor: pointer;
+
+  font-size: 1rem;
+  font-family: $font-win;
+}
+
+.gameButtons button:hover {
+  background-color: lightpink;
+  color: white;
+}
+
+.winning-message.show {
+  display: flex;
+  flex-direction: column;
+}
+
+.winning-message.color {
+  color: lightgreen;
+}
+
+
+
+// MEDIA QUERY
+
+@media all and (max-width: 667px) {
+  body {
+    margin: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+  }
+
+  h1 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  
+    margin-top: 80px;
+    text-align: center;
+    font-family: $font-fun;
+    font-size: 2.5em;
+    letter-spacing: 3px;
+    color: lightpink;
+  }
+  
+
+  .winning-message {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    justify-content: center;
+    align-items: center;
+  
+    margin-top: -10%;
+    color: lightpink;
+    font-size: 2rem;
+    font-family: $font-fun;
+  }
+
+  .winning-message.show {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
