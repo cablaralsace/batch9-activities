@@ -103,7 +103,7 @@ function listInventory() {
 }
 
 function totalEarnings() {
-  console.log(`${store.storeName} has P${store.earnings} total earnings.`);
+  console.log(`${store.storeName} has PHP ${store.earnings} total earnings.`);
 }
 
 let twilight = new Book("Twilight", 0, 500);

@@ -64,6 +64,8 @@
 
 // let boat = new SpeedBoat();
 // boat.pilot();
+// import { storeMixin } from "./utils.mjs";
+// Object.assign(Book.prototype, storeMixin);
 
 class MainStore {
   constructor(name) {
@@ -74,14 +76,24 @@ class MainStore {
 
   addItem(item) {
     this.list.push(item);
-    // return this;
+    return this;
   }
 
-  showInventory() {
-    console.log(this.list);
+  restockItem(title, quantity) {
+    this.list.some((Book) => {
+      if (Book.title === title) {
+        Book.quantity += quantity;
+      }
+    });
+
+    console.log(
+      `Successfully restocked ${title}. Stock/s left: ${this.list.quantity}.`
+    );
   }
-  //   restockItem();
   //   sellItem();
+  // showInventory() {
+  //   console.log(this.list);
+  // }
 }
 
 class Book {
@@ -98,7 +110,9 @@ class BookStore extends MainStore {
   }
   addBook(title, quantity, value) {
     let newBook = new Book(title, quantity, value);
-    super.addItem(newBook);
+    super.addItem(newBook); //mapupunta sa BookStore
+    store.addItem(newBook); //mapupunta sa MainStore
+    return this;
   }
 }
 
@@ -112,5 +126,7 @@ let bookStore = new BookStore("NBS");
 
 // store.addItem(book);
 
-store.addItem(new Book("A", 1, 100));
-store.showInventory();
+// bookStore.addBook("A", 1, 100);
+// bookStore.addBook("A", 1, 100);
+// store.showInventory();
+5;
