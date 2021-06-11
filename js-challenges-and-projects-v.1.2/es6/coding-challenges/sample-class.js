@@ -1,5 +1,3 @@
-import { mainStoreMixin, bookStoreMixin } from "./utils.mjs";
-
 class MainStore {
   constructor(name) {
     this.name = name;
@@ -18,6 +16,10 @@ class MainStore {
         `[Title: "${this.list[i].title}", Stocks left: ${this.list[i].quantity}]`
       );
     }
+  }
+
+  totalEarnings() {
+    console.log(`${this.name} has PHP ${this.earnings} total earnings.`);
   }
 }
 
@@ -39,7 +41,6 @@ class BookStore extends MainStore {
     let newBook = new Book(title, quantity, value);
     super.addItem(newBook); //mapupunta sa BookStore
     store.addItem(newBook); //mapupunta sa MainStore
-    bookStoreMixin.addNotif(title, quantity);
     return this;
   }
 
@@ -52,9 +53,10 @@ class BookStore extends MainStore {
     let availableBook = this.findBook(title);
     if (availableBook) {
       availableBook.quantity += quantity;
-      bookStoreMixin.restockSuccess(title, quantity);
     } else {
-      bookStoreMixin.restockError(title);
+      console.log(
+        `Sorry ${title} is not yet in our inventory. Please add it first.`
+      );
     }
   }
 
@@ -62,37 +64,25 @@ class BookStore extends MainStore {
     let availableBook = this.findBook(title);
     if (availableBook) {
       if (quantity > availableBook.quantity) {
-        bookStoreMixin.sellErrorLessStock(title, availableBook.quantity);
+        console.log(
+          `${title} has only ${availableBook.quantity} stock/s left.`
+        );
       } else {
         availableBook.quantity -= quantity;
         this.earnings = quantity * availableBook.value;
         this.parentStore.earnings = this.earnings;
-        bookStoreMixin.sellSuccess(title, quantity);
+        console.log(`Successful Transaction!`);
       }
     } else {
-      bookStoreMixin.sellErrorNoStock(title);
+      console.log(`Sorry, we don't have ${title}.`);
     }
+  }
+
+  totalEarnings() {
+    console.log(`${this.name} has PHP ${this.earnings} total earnings.`);
   }
 }
 
-Object.assign(MainStore.prototype, mainStoreMixin);
-Object.assign(BookStore.prototype, bookStoreMixin);
-
-let store = new MainStore("Main Store");
-let bookStore = new BookStore("Fully Booked", store);
-
-bookStore.addBook("Twilight", 5, 100);
-
-bookStore.restockBook("Twilight", 3);
-store.listInventory();
-bookStore.restockBook("New Moon", 5);
-
-// console.log(bookStore);
-
-bookStore.sellBook("Twilight", 3);
-store.listInventory();
-bookStore.sellBook("New Moon", 1);
-bookStore.sellBook("Twilight", 10);
-
-store.totalEarnings();
-bookStore.totalEarnings();
+let store = new MainStore("Store");
+let bookStore = new BookStore("NBS", store);
+5;

@@ -79,21 +79,17 @@ class MainStore {
     return this;
   }
 
-  restockItem(title, quantity) {
-    this.list.some((Book) => {
-      if (Book.title === title) {
-        Book.quantity += quantity;
-      }
-    });
-
-    console.log(
-      `Successfully restocked ${title}. Stock/s left: ${this.list.quantity}.`
-    );
+  listInventory() {
+    for (let i = 0; i < this.list.length; i++) {
+      console.log(
+        `[Title: "${this.list[i].title}", Stocks left: ${this.list[i].quantity}]`
+      );
+    }
   }
-  //   sellItem();
-  // showInventory() {
-  //   console.log(this.list);
-  // }
+
+  totalEarnings() {
+    console.log(`${this.name} has PHP ${this.earnings} total earnings.`);
+  }
 }
 
 class Book {
@@ -105,28 +101,69 @@ class Book {
 }
 
 class BookStore extends MainStore {
-  constructor(name) {
+  constructor(name, parentStore) {
     super(name);
+    this.parentStore = parentStore;
   }
+
   addBook(title, quantity, value) {
     let newBook = new Book(title, quantity, value);
     super.addItem(newBook); //mapupunta sa BookStore
     store.addItem(newBook); //mapupunta sa MainStore
     return this;
   }
+
+  findBook(title) {
+    const findBook = this.list.find((book) => book.title === title);
+    return findBook; //returns true if makita yung title ng book sa listahan
+  }
+
+  restockBook(title, quantity) {
+    let availableBook = this.findBook(title);
+    if (availableBook) {
+      availableBook.quantity += quantity;
+    } else {
+      console.log(
+        `Sorry ${title} is not yet in our inventory. Please add it first.`
+      );
+    }
+  }
+
+  sellBook(title, quantity) {
+    let availableBook = this.findBook(title);
+    if (availableBook) {
+      if (quantity > availableBook.quantity) {
+        console.log(
+          `${title} has only ${availableBook.quantity} stock/s left.`
+        );
+      } else {
+        availableBook.quantity -= quantity;
+        this.earnings = quantity * availableBook.value;
+        this.parentStore.earnings = this.earnings;
+        console.log(`Successful Transaction!`);
+      }
+    } else {
+      console.log(`Sorry, we don't have ${title}.`);
+    }
+  }
+
+  totalEarnings() {
+    console.log(`${this.name} has PHP ${this.earnings} total earnings.`);
+  }
 }
 
 let store = new MainStore("Store");
-let bookStore = new BookStore("NBS");
-
-// let bookOne = new Book("A", 1, 100);
-// let bookTwo = new Book("B", 2, 200);
-// bookStore.addBook(bookOne);
-// bookStore.addBook(bookTwo);
-
-// store.addItem(book);
+let bookStore = new BookStore("NBS", store);
 
 // bookStore.addBook("A", 1, 100);
-// bookStore.addBook("A", 1, 100);
-// store.showInventory();
-5;
+// bookStore.restockBook("A", 5);
+// bookStore.restockBook("B", 5);
+
+// bookStore.sellBook ("A", 2);
+// bookStore.sellBook("B", 1);
+// bookStore.sellBook ("A", 10);
+
+// store.listInventory();
+
+// store.totalEarnings();
+// bookStore.totalEarnings;;

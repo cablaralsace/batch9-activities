@@ -1,16 +1,39 @@
-export let storeMixin = {
-  add() {
+export let mainStoreMixin = {
+  totalEarnings() {
+    console.log(`\n${this.name} has PHP ${this.earnings} total earnings.`);
+  },
+};
+
+export let bookStoreMixin = {
+  addNotif(title, quantity) {
+    console.log(`\nADDED: Title: ${title}, Qty: ${quantity} pieces`);
+  },
+
+  restockSuccess(title, quantity) {
+    console.log(`\nRESTOCK SUCCESS: Title: ${title}, Qty: ${quantity} pieces`);
+  },
+
+  restockError(title) {
+    console.log(`\nRESTOCK ERROR: Please add ${title} to the inventory first.`);
+  },
+
+  sellSuccess(title, quantity) {
     console.log(
-      `Successfully added ${this.quantity} stocks/s of ${this.title}.`
+      `\nSUCCESSFUL TRANSACTION: Sold ${quantity} pieces of ${title}.`
     );
   },
 
-  restock() {
+  sellErrorLessStock(title, quantity) {
     console.log(
-      `Successfully restocked. You now have ${this.quantity} stocks of ${this.title} left.`
+      `\nSALE STOCK ERROR: ${title} has only ${quantity} stock/s left.`
     );
   },
-  sell() {},
 
-  //   errors() {},
+  sellErrorNoStock(title) {
+    console.log(`\nSALE ERROR: Sorry, we do not carry ${title} in our store.`);
+  },
+
+  totalEarnings() {
+    console.log(`\n${this.name} has PHP ${this.earnings} total earnings.`);
+  },
 };
