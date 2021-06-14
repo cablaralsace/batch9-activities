@@ -85,13 +85,13 @@ store.totalEarnings();
 bookStore.addBook("Twilight", 5, 100);
 // store.listInventory();
 
-// bookStore.restockBook("Twilight", 3);
+bookStore.restockBook("Twilight", 3);
 // store.listInventory();
 // bookStore.restockBook("New Moon", 5);
 
 // // console.log(bookStore);
 
-// bookStore.sellBook("Twilight", 3);
+bookStore.sellBook("Twilight", 9);
 // store.listInventory();
 // bookStore.sellBook("New Moon", 1);
 // bookStore.sellBook("Twilight", 10);
